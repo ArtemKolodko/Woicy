@@ -1,0 +1,31 @@
+
+.login-wrapper
+    form(action='/login', method='post', class='form-signin', ng-show="!showAnotherOption")
+        .input-wrapper
+            input(type='email', name='email', class='form-control', placeholder='Email')
+        .input-wrapper
+            input(type='password', name='password', class='form-control', placeholder='Password')
+        .input-wrapper.input-wrapper__submit
+            input(type='submit', value='Sign In',class='btn btn-lg btn-primary btn-block')
+        .input-wrapper.input-wrapper__anotherOption
+            span.option
+                a(ng-click="showAnotherOption=!showAnotherOption") or Sign up
+
+    form(id="signup", method="POST", action="/signup", class='form-signin', ng-show="showAnotherOption")
+        .input-wrapper
+            input(type='email', name='email',class='form-control', placeholder='Email', required)
+        .input-wrapper
+            input(type='password', name='password', class='form-control', placeholder='Password', required)
+        .input-wrapper.input-wrapper__submit
+            input(type="submit", value="Sign Up", class='btn btn-lg btn-success btn-block', required)
+        .input-wrapper.input-wrapper__anotherOption
+            span.option
+                a(ng-click="showAnotherOption=!showAnotherOption") or Sign in
+
+
+    .login-social-networks
+        a(href="/auth/facebook") Log In With Facebook
+        br
+        a(href="/auth/google") Log In With Google
+        br
+        a(href="/auth/vk") Log In With VK

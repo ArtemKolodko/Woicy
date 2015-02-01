@@ -1,0 +1,23 @@
+.header
+    .menu
+        .item Main page
+        .item Page 2
+        .item Page 3
+        .item Page 3
+        .item Page 3
+
+    if user !== null
+        .user_square
+            .panel-item
+                a(href="/profile")
+                    img(src='#{user.photo}', width="40px", height="40px")
+            .panel-item
+                a(href="/profile")
+                    .username #{user.firstName}
+                a(href="/logout") Sign out
+
+    else
+        .user_square
+            a(href="/login") Login
+                br
+            a(href="/signup") Sign up

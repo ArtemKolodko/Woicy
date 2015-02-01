@@ -1,0 +1,7 @@
+include main_skeleton.jade
+// не включать заголовок для неавторизированного пользователя
+if user !== null
+    include header.jade
+    include layots/body_layot.jade
+else
+    include layots/body_layot_not_authorized.jade
